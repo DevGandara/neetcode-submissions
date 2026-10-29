@@ -11,12 +11,12 @@ Do an 0's array of the alphabet length, add 1 counting the frequency of each let
 from collections import defaultdict
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        grams = defaultdict(list)
+        grams = defaultdict(list) # Añade listas vacias para cada clave que se invoque
 
         for s in strs:
             counter = [0] * 26
             for c in s:
-                counter[ord(c) - ord('a')] += 1
+                counter[ord(c) - ord('a')] += 1 # Agregar uno al indice de la letra en el arreglo (indice_letra - 97)
             
             grams[tuple(counter)].append(s)
             
